@@ -10,6 +10,7 @@ import { IoEyeSharp } from "react-icons/io5";
 import { LuBuilding2 } from "react-icons/lu";
 import { PiSuitcase } from "react-icons/pi";
 import { RiCarLine, RiDeleteBinLine } from "react-icons/ri";
+import { SiMicrosoftexcel } from "react-icons/si";
 
 
 interface Iicons {
@@ -28,7 +29,8 @@ interface Iicons {
   out:IconType,
   plus:IconType,
   filter: IconType,
-  deleteLeft:IconType
+  deleteLeft:IconType,
+  excel: IconType,
 }
 
 
@@ -49,4 +51,5 @@ export const icons: Iicons = {
   plus:AiOutlinePlus,
   filter:AiOutlineFilter,
   deleteLeft: FaDeleteLeft,
+  excel:SiMicrosoftexcel,
 }

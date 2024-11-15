@@ -1,15 +1,14 @@
 "use client"
-import { ILoginRequest } from "@/app/core/application/dto";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { ILoginRequest } from '@/app/core/application/dto'
+import { icons } from '@/app/interface/Icon'
+import { Button } from '@/ui/atoms/Button'
+import { FormField } from '@/ui/molecules/common/FormField'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useRouter } from 'next/navigation'
+import React from 'react'
+import { useForm } from 'react-hook-form'
 import * as yup from "yup";
-// import { useRouter } from 'next/navigation';
-import { FormField } from "@/ui/molecules/common/FormField";
-import { Button } from "@/ui/atoms/Button";
-import { icons } from "@/app/interface/Icon";
-import { ErrorResponse } from "@/app/core/application/dto/common/error-response.dto";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+
 
 const loginSchema = yup.object().shape({
   email: yup
@@ -23,7 +22,7 @@ const loginSchema = yup.object().shape({
 });
 
 
-const LoginForm = () => {
+const Filter = () => {
   const {
     control,
     handleSubmit,
@@ -84,30 +83,41 @@ const LoginForm = () => {
   };
 
   return (
-    <form
-      className="w-full max-w-sm mx-auto p-4 space-y-4 flex justify-center flex-col items-center"
-      onSubmit={handleSubmit(handleLogin)}
-    >
+    <form className="w-full  p-4 flex justify-end items-center gap-5">
       <FormField<ILoginRequest>
         control={control}
-        type="email"
-        label="Correo Electrónico"
+        type="text"
+        label="Placa"
         name="email"
         error={errors.email}
-        placeholder="Ingresa tu correo"
       />
 
       <FormField<ILoginRequest>
         control={control}
-        type="password"
-        label="Contraseña"
+        type="text"
+        label="Año"
         name="password"
         error={errors.password}
-        placeholder="Ingresa tu contraseña"
       />
 
-      <div className="w-64 ">
-        <Button className="bg-custom-blue text-white" label="Iniciar sesión" type="submit" Icon={icons.lock} />
+      <FormField<ILoginRequest>
+        control={control}
+        type="text"
+        label="Marca"
+        name="password"
+        error={errors.password}
+      />
+      <FormField<ILoginRequest>
+        control={control}
+        type="text"
+        label="Modelo"
+        name="password"
+        error={errors.password}
+      />
+      <div className="w-64  flex gap-3 ">
+        <Button className="bg-custom-blue text-white p-2" label="Filtrar" type="submit" Icon={icons.filter} classNameIcon='text-2xl' />
+        <Button className="bg-white text-custom-black p-2 border border-custom-black" label="Limpiar" type="submit" Icon={icons.deleteLeft} classNameIcon='text-2xl'  />
+
       </div>
 
 
@@ -115,4 +125,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+export default Filter

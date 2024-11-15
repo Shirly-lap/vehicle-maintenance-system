@@ -7,12 +7,15 @@ interface LinkProps {
   label: string,
   Icon?: IconType
   className: string,
+  classNameIcon?: string,
+
+  
 }
 
-const ItemLink = ({ path, label, Icon, className }: LinkProps) => {
+const ItemLink = ({ path, label, Icon, className, classNameIcon }: LinkProps) => {
   return (
-    <Link href={path} className={`link-primary ${className}`}>
-      {Icon && <Icon size={20}></Icon>}
+    <Link href={path} className={`btn-primary ${className}`}>
+      {Icon && <Icon className={classNameIcon}></Icon>}
       {label}
     
     </Link>

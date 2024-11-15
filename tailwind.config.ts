@@ -20,6 +20,9 @@ const config: Config = {
         'custom-red': '#FF7678',
         'custom-red-btn': '#CF0003'
       },
+      boxShadow: {
+        'custom': '0px 4px 10px 0px #00000040',  
+      },
     },
   },
   plugins: [],

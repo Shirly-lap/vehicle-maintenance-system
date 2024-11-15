@@ -1,3 +1,4 @@
+import HeaderHome from "@/ui/organisms/header/HeaderHome";
 import AuthGuard from "./guard/AuthGuard";
 
 export default function SectionsLayout({ children }: { children: React.ReactNode }) {
@@ -5,12 +6,13 @@ export default function SectionsLayout({ children }: { children: React.ReactNode
     <>
       <AuthGuard>
         <main className=' flex h-screen  w-full'>
-          <div className="container-children w-full bg-slate-200 overflow-y-auto">
+          <HeaderHome />
+          <div className="container-children w-full  overflow-y-auto">
             {children}
           </div>
         </main>
       </AuthGuard>
     </>
-//-
+    //-
   );
 }

@@ -7,7 +7,7 @@ interface HeaderProps {
 
 export const Header = ({ children, className }: HeaderProps) => {
   return (
-    <header>
+    <header className=' '>
       <nav className={className} >
         {children}
 

@@ -33,7 +33,7 @@ export const FormField = <T extends FieldValues>({
     <div className="w-full flex  flex-col mb-4">
       <label
         htmlFor={id || label.toLowerCase()}
-        className={`text-sm font-medium text-custom-black`}
+        className={`text-sm font-semibold text-custom-black`}
       >
         {label}
       </label>
@@ -45,7 +45,7 @@ export const FormField = <T extends FieldValues>({
             id={id || label.toLowerCase()}
             type={type}
             error={error?.message}
-            placeholder={placeholder || `Ingrese su ${label.toLowerCase()}`}
+            placeholder={placeholder}
             {...field}
           />
         )}
