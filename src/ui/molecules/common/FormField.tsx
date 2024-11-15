@@ -33,7 +33,7 @@ export const FormField = <T extends FieldValues>({
     <div className="w-full flex  flex-col mb-4">
       <label
         htmlFor={id || label.toLowerCase()}
-        className={`text-sm font-medium`}
+        className={`text-sm font-medium text-custom-black`}
       >
         {label}
       </label>
